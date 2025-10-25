@@ -11,7 +11,7 @@ similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 def fetch_data(movie_id):
     try:
-        url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={your_api_key}&language=en-US"
+        url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=8265bd1679663a7ea12ac168da84d2e&language=en-US"
         response = requests.get(url, timeout=5)
         response.raise_for_status()
         data = response.json()
@@ -38,17 +38,17 @@ def recommend_movie(movie_title):
     
     return recommended_movie_name, recommended_movie_poster
 
-# Dropdown
+
 selected_movie_name = st.selectbox("Which movie are you looking for?", movies['title'])
 
-# Button
+
 if st.button("Recommend"):
     st.write("You selected:", selected_movie_name)
     names, posters = recommend_movie(selected_movie_name)
 
-    # Loop through recommendations in chunks of 3
+   
     for i in range(0, len(names), 3):
-        cols = st.columns(3)  # Create 3 columns
+        cols = st.columns(3)  
 
         for j in range(3):
             if i + j < len(names):
