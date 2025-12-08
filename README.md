@@ -51,7 +51,7 @@ This Movie Recommendation System uses content-based filtering to suggest movies 
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/IshwikVashishtha/Content_based_recommedation.git
    cd movie_recommendation_system
    ```
 
